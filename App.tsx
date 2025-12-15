@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ViewMode, Product, Review } from './types';
-import { ProductCard } from './components/ProductCard';
+import { ExhibitCard } from './components/ExhibitCard';
 import { ProductModal } from './components/ProductModal';
 import { SellerDashboard } from './components/SellerDashboard';
 import { TutorialOverlay, TutorialStep } from './components/TutorialOverlay';
@@ -495,7 +495,7 @@ const App: React.FC = () => {
                  ) : (
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 opacity-80 hover:opacity-100 transition-opacity">
                         {products.map(product => (
-                            <ProductCard 
+                            <ExhibitCard 
                                 key={product.id} 
                                 product={product} 
                                 onClick={handleProductClick} 
@@ -597,7 +597,7 @@ const App: React.FC = () => {
 
             <div id="product-grid-area" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 min-h-[50vh]">
               {filteredProducts.map((product, index) => (
-                <ProductCard 
+                <ExhibitCard 
                   key={product.id} 
                   id={index === 0 && viewMode === ViewMode.SHOP ? 'tutorial-first-product-content' : undefined}
                   product={product} 
